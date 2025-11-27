@@ -1,0 +1,16 @@
+{
+	"extends": "./node_modules/@tsconfig/node22/tsconfig.json",
+	"compilerOptions": {
+		/* Visit https://aka.ms/tsconfig.json to read more about this file */
+		"outDir": "lib",
+		"rootDir": ".",
+		"declaration": true,
+		"declarationDir": "lib",
+		"resolveJsonModule": true
+	},
+	"include": ["src/**/*", "tests/**/*"],
+	"exclude": ["node_modules"],
+	"ts-node": {
+		"files": true
+	}
+}

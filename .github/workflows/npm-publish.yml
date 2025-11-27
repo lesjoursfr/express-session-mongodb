@@ -1,0 +1,35 @@
+name: Publish Package to npmjs
+
+on:
+  release:
+    types: [created]
+
+permissions:
+  contents: read
+
+jobs:
+  publish:
+    name: Publish Package to npmjs
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@1af3b93b6815bc44a9784bd300feb67ff0d1eeb3 # v6
+
+      - run: corepack enable
+      - name: Use Node.js 24
+        uses: actions/setup-node@2028fbc5c25fe9cf00d9f06a71cc4710d4507903 # v6
+        with:
+          node-version: "24.11.1"
+          package-manager-cache: false
+          registry-url: "https://registry.npmjs.org"
+
+      - name: Install
+        run: |
+          yarn config set enableImmutableInstalls false
+          yarn install
+
+      - run: npm run build
+
+      - run: npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_LESJOURS_TOKEN }}

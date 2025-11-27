@@ -1,41 +1,78 @@
 {
-  "name": "connect-mongodb-session",
-  "version": "5.0.0",
-  "description": "MongoDB session store for connect/express built by MongoDB",
-  "keywords": [
-    "connect",
-    "mongo",
-    "mongodb",
-    "session",
-    "express"
-  ],
-  "author": "Valeri Karpov <valeri.karpov@mongodb.com>",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/mongodb-js/connect-mongodb-session.git"
-  },
-  "dependencies": {
-    "archetype": "0.13.x",
-    "mongodb": "5.x || 6.x"
-  },
-  "devDependencies": {
-    "acquit": "1.0.5",
-    "acquit-ignore": "0.1.0",
-    "acquit-markdown": "0.1.0",
-    "cookie": "0.3.1",
-    "express": "4.17.0",
-    "express-session": "1.17.0",
-    "istanbul": "0.4.5",
-    "mocha": "3.1.2",
-    "sinon": "17.0.1",
-    "strawman": "0.0.1",
-    "superagent": "3.x"
-  },
-  "main": "index.js",
-  "scripts": {
-    "docs": "acquit-markdown -r acquit-ignore -p './test/examples.test.js' -h './HEADER.md' > README.md",
-    "test": "env NODE_PATH=../ ./node_modules/mocha/bin/mocha ./test/*.test.js",
-    "test-travis": "env NODE_PATH=../ ./node_modules/istanbul/lib/cli.js cover ./node_modules/mocha/bin/_mocha -- -R spec ./test/*.test.js",
-    "unit-coverage": "env NODE_PATH=../ ./node_modules/istanbul/lib/cli.js cover ./node_modules/mocha/bin/_mocha -- -R spec ./test/unit.test.js"
-  }
+	"name": "@lesjoursfr/express-session-mongodb",
+	"version": "5.0.0",
+	"description": "MongoDB session store for express",
+	"license": "Apache-2.0",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/lesjoursfr/express-session-mongodb.git"
+	},
+	"homepage": "https://github.com/lesjoursfr/express-session-mongodb#readme",
+	"bugs": {
+		"url": "https://github.com/lesjoursfr/express-session-mongodb/issues"
+	},
+	"publishConfig": {
+		"access": "public"
+	},
+	"engines": {
+		"node": "22.x || 24.x"
+	},
+	"keywords": [
+		"mongo",
+		"mongodb",
+		"session",
+		"express"
+	],
+	"main": "./lib/index.js",
+	"types": "./lib/index.d.ts",
+	"files": [
+		"lib/**/*",
+		"src/**/*"
+	],
+	"scripts": {
+		"freshlock": "rm -rf node_modules/ && rm .yarn/install-state.gz && rm yarn.lock && yarn",
+		"check-lint": "eslint",
+		"check-format": "prettier --check .",
+		"check-tsc": "tsc --noEmit",
+		"lint": "eslint --fix",
+		"format": "prettier --write .",
+		"build": "tsc -p tsconfig.build.json",
+		"test": "mocha"
+	},
+	"dependencies": {
+		"express-session": "^1.18.2",
+		"mongodb": "~7.0.0"
+	},
+	"devDependencies": {
+		"@eslint/js": "^9.39.1",
+		"@tsconfig/node22": "^22.0.5",
+		"@types/express": "^5.0.5",
+		"@types/express-session": "^1.18.2",
+		"@types/fs-extra": "^11.0.4",
+		"@types/mocha": "^10.0.10",
+		"@types/node": "^24.10.1",
+		"@types/sinon": "^21.0.0",
+		"@types/superagent": "^8.1.9",
+		"cookie": "^1.1.1",
+		"eslint": "^9.39.1",
+		"eslint-config-prettier": "^10.1.8",
+		"express": "^5.1.0",
+		"fs-extra": "^11.3.2",
+		"globals": "^16.5.0",
+		"mocha": "^11.7.5",
+		"mongodb": "^7.0.0",
+		"mongodb-memory-server": "^10.3.0",
+		"prettier": "^3.6.2",
+		"sinon": "^21.0.0",
+		"superagent": "^10.2.3",
+		"ts-node": "^10.9.2",
+		"typescript": "^5.9.3",
+		"typescript-eslint": "^8.47.0"
+	},
+	"dependenciesMeta": {
+		"mongodb-memory-server": {
+			"built": true
+		}
+	},
+	"packageManager": "yarn@4.12.0"
 }
