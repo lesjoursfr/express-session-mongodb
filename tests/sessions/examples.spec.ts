@@ -98,9 +98,13 @@ describe("MongoDBStore", function () {
     assert.equal(count, 1);
     response = await superagent.get("http://127.0.0.1:3000").set("Cookie", "connect.sid=" + cookie["connect.sid"]);
     assert.ok(!response.headers["set-cookie"]);
-    await store.clear();
-    count = await underlyingDb.collection("mySessions").countDocuments({});
-    assert.equal(count, 0);
+    await new Promise((resolve) => {
+      store.clear(async function () {
+        count = await underlyingDb.collection("mySessions").countDocuments({});
+        assert.equal(count, 0);
+        resolve(null);
+      });
+    });
   });
 
   /**
