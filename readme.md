@@ -3,20 +3,15 @@
 
 # @lesjoursfr/express-session-mongodb
 
-[MongoDB](http://mongodb.com)-backed session storage for [Express](http://www.expressjs.com).
+[MongoDB](http://mongodb.com) backed session storage for [Express](http://www.expressjs.com).
+This is a fork of the [mongodb-js/connect-mongodb-session](https://github.com/mongodb-js/connect-mongodb-session) project.
 
 # MongoDBStore
 
-This module exports a single function which takes an instance of connect
-(or Express) and returns a `MongoDBStore` class that can be used to
+This module exports a `MongoDBStore` class that can be used to
 store sessions in MongoDB.
 
 ## It can store sessions for Express 5
-
-If you pass in an instance of the
-[`express-session` module](http://npmjs.org/package/express-session)
-the MongoDBStore class will enable you to store your Express sessions
-in MongoDB.
 
 The MongoDBStore class has 3 required options:
 
@@ -25,17 +20,17 @@ The MongoDBStore class has 3 required options:
 3. `collection`: the MongoDB collection to store sessions in
 
 **Note:** You can pass a callback to the `MongoDBStore` constructor,
-but this is entirely optional. The Express 3.x example demonstrates
+but this is entirely optional. The Express 5.x example demonstrates
 that you can use the MongoDBStore class in a synchronous-like style: the
 module will manage the internal connection state for you.
 
 ```javascript
-var express = require("express");
-var session = require("express-session");
-var MongoDBStore = require("@lesjoursfr/express-session-mongodb")(session);
+const express = require("express");
+const expressSession = require("express-session");
+const { MongoDBStore } = require("@lesjoursfr/express-session-mongodb");
 
-var app = express();
-var store = new MongoDBStore({
+const app = express();
+const store = new MongoDBStore({
 	uri: "mongodb://127.0.0.1:27017/connect_mongodb_session_test",
 	collection: "mySessions",
 });
@@ -46,7 +41,7 @@ store.on("error", function (error) {
 });
 
 app.use(
-	require("express-session")({
+	expressSession({
 		secret: "This is a secret",
 		cookie: {
 			maxAge: 1000 * 60 * 60 * 24 * 7, // 1 week
@@ -64,7 +59,7 @@ app.get("/", function (req, res) {
 	res.send("Hello " + JSON.stringify(req.session));
 });
 
-server = app.listen(3000);
+const server = app.listen(3000);
 ```
 
 ## It throws an error when it can't connect to MongoDB
@@ -74,12 +69,12 @@ errors. If you don't pass a callback to the `MongoDBStore` constructor,
 `MongoDBStore` will `throw` if it can't connect.
 
 ```javascript
-var express = require("express");
-var session = require("express-session");
-var MongoDBStore = require("@lesjoursfr/express-session-mongodb")(session);
+const express = require("express");
+const expressSession = require("express-session");
+const { MongoDBStore } = require("@lesjoursfr/express-session-mongodb");
 
-var app = express();
-var store = new MongoDBStore(
+const app = express();
+const store = new MongoDBStore(
 	{
 		uri: "mongodb://bad.host:27000/connect_mongodb_session_test?connectTimeoutMS=10",
 		databaseName: "connect_mongodb_session_test",
@@ -95,7 +90,7 @@ store.on("error", function (error) {
 });
 
 app.use(
-	session({
+	expressSession({
 		secret: "This is a secret",
 		cookie: {
 			maxAge: 1000 * 60 * 60 * 24 * 7, // 1 week
@@ -113,7 +108,7 @@ app.get("/", function (req, res) {
 	res.send("Hello " + JSON.stringify(req.session));
 });
 
-server = app.listen(3000);
+const server = app.listen(3000);
 ```
 
 ## It supports several other options
@@ -121,11 +116,11 @@ server = app.listen(3000);
 There are several other options you can pass to `new MongoDBStore()`:
 
 ```javascript
-var express = require("express");
-var session = require("express-session");
-var MongoDBStore = require("@lesjoursfr/express-session-mongodb")(session);
+const express = require("express");
+const expressSession = require("express-session");
+const { MongoDBStore } = require("@lesjoursfr/express-session-mongodb");
 
-var store = new MongoDBStore({
+const store = new MongoDBStore({
 	uri: "mongodb://127.0.0.1:27017/connect_mongodb_session_test",
 	collection: "mySessions",
 
@@ -150,11 +145,11 @@ Unlike in MongoDB, Cosmos starts the timer at the point of document creation so 
 milliseconds, the `expiresAfterSeconds` must equal `expires / 1000`.
 
 ```javascript
-var express = require("express");
-var session = require("express-session");
-var MongoDBStore = require("@lesjoursfr/express-session-mongodb")(session);
+const express = require("express");
+const expressSession = require("express-session");
+const { MongoDBStore } = require("@lesjoursfr/express-session-mongodb");
 
-var store = new MongoDBStore({
+const store = new MongoDBStore({
 	uri: "mongodb://username:password@cosmosdb-name.mongo.cosmos.azure.com:10255/?ssl=true&replicaSet=globaldb&retrywrites=false&maxIdleTimeMS=120000&appName=@cosmosdb-name@",
 	databaseName: "myDb",
 	collection: "mySessions",
