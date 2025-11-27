@@ -62,12 +62,12 @@
 		"mocha": "^11.7.5",
 		"mongodb": "^7.0.0",
 		"mongodb-memory-server": "^10.3.0",
-		"prettier": "^3.6.2",
+		"prettier": "^3.7.1",
 		"sinon": "^21.0.0",
 		"superagent": "^10.2.3",
 		"ts-node": "^10.9.2",
 		"typescript": "^5.9.3",
-		"typescript-eslint": "^8.47.0"
+		"typescript-eslint": "^8.48.0"
 	},
 	"dependenciesMeta": {
 		"mongodb-memory-server": {
