@@ -42,7 +42,7 @@
 	"dependencies": {
 		"express": "^5.1.0",
 		"express-session": "^1.18.2",
-		"mongodb": "^7.0.0"
+		"mongodb": "~7.0"
 	},
 	"devDependencies": {
 		"@eslint/js": "^9.39.1",
@@ -60,7 +60,6 @@
 		"fs-extra": "^11.3.2",
 		"globals": "^16.5.0",
 		"mocha": "^11.7.5",
-		"mongodb": "^7.0.0",
 		"mongodb-memory-server": "^10.3.0",
 		"prettier": "^3.7.1",
 		"sinon": "^21.0.0",
