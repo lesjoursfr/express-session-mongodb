@@ -1,5 +1,5 @@
-[![npm version](https://badge.fury.io/js/@lesjoursfr%2Fconnect-mongodb-session.svg)](https://badge.fury.io/js/@lesjoursfr%2Fconnect-mongodb-session)
-[![QC Checks](https://github.com/lesjoursfr/connect-mongodb-session/actions/workflows/quality-control.yml/badge.svg)](https://github.com/lesjoursfr/connect-mongodb-session/actions/workflows/quality-control.yml)
+[![npm version](https://badge.fury.io/js/@lesjoursfr%2Fexpress-session-mongodb.svg)](https://badge.fury.io/js/@lesjoursfr%2Fexpress-session-mongodb)
+[![QC Checks](https://github.com/lesjoursfr/express-session-mongodb/actions/workflows/quality-control.yml/badge.svg)](https://github.com/lesjoursfr/express-session-mongodb/actions/workflows/quality-control.yml)
 
 # @lesjoursfr/express-session-mongodb
 
@@ -10,6 +10,11 @@ This is a fork of the [mongodb-js/connect-mongodb-session](https://github.com/mo
 
 This module exports a `MongoDBStore` class that can be used to
 store sessions in MongoDB.
+
+This module also exports 2 middleware functions:
+
+- `ensureLoggedIn`: redirects to a specified page if the user is not logged in
+- `ensureLoggedOut`: redirects to a specified page if the user is logged in
 
 ## It can store sessions for Express 5
 
@@ -109,6 +114,31 @@ app.get("/", function (req, res) {
 });
 
 const server = app.listen(3000);
+```
+
+## It exports middleware to ensure login status
+
+These middlewares functions will use the existing `isAuthenticated` method on the
+request object to determine if the user is logged in or not. This behavior allows
+integration with existing authentication middleware such as `passport`.
+If there is no `isAuthenticated` method on the request object, these middlewares
+will check for the existence of `req.user` to determine if the user is logged in.
+
+```javascript
+const express = require("express");
+const {
+	ensureLoggedIn,
+	ensureLoggedOut,
+} = require("@lesjoursfr/express-session-mongodb");
+
+const app = express();
+
+app.get("/profile", ensureLoggedIn("/login"), function (req, res) {
+	res.send("This is the profile page for " + req.session.user.username);
+});
+app.get("/login", ensureLoggedOut("/profile"), function (req, res) {
+	res.send("This is the login page");
+});
 ```
 
 ## It supports several other options
