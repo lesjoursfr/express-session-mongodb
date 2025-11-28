@@ -1,6 +1,6 @@
 {
 	"name": "@lesjoursfr/express-session-mongodb",
-	"version": "1.0.2",
+	"version": "1.0.3",
 	"description": "MongoDB session store for express",
 	"license": "Apache-2.0",
 	"repository": {
