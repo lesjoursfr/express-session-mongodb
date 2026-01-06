@@ -63,10 +63,10 @@
 		"mongodb-memory-server": "^11.0.1",
 		"prettier": "^3.7.4",
 		"sinon": "^21.0.1",
-		"superagent": "^10.2.3",
+		"superagent": "^10.3.0",
 		"ts-node": "^10.9.2",
 		"typescript": "^5.9.3",
-		"typescript-eslint": "^8.51.0"
+		"typescript-eslint": "^8.52.0"
 	},
 	"dependenciesMeta": {
 		"mongodb-memory-server": {
