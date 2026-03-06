@@ -57,7 +57,7 @@
 		"cookie": "1.1.1",
 		"eslint": "10.0.2",
 		"eslint-config-prettier": "10.1.8",
-		"fs-extra": "11.3.3",
+		"fs-extra": "11.3.4",
 		"globals": "17.4.0",
 		"mocha": "11.7.5",
 		"mongodb-memory-server": "11.0.1",
