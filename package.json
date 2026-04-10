@@ -42,7 +42,7 @@
 	"dependencies": {
 		"express": "^5.2.1",
 		"express-session": "^1.19.0",
-		"mongodb": "~7.1.0"
+		"mongodb": "~7.1.1"
 	},
 	"devDependencies": {
 		"@eslint/js": "10.0.1",
@@ -51,11 +51,11 @@
 		"@types/express-session": "1.18.2",
 		"@types/fs-extra": "11.0.4",
 		"@types/mocha": "10.0.10",
-		"@types/node": "24.12.0",
-		"@types/sinon": "21.0.0",
+		"@types/node": "24.12.2",
+		"@types/sinon": "21.0.1",
 		"@types/superagent": "8.1.9",
 		"cookie": "1.1.1",
-		"eslint": "10.0.3",
+		"eslint": "10.2.0",
 		"eslint-config-prettier": "10.1.8",
 		"fs-extra": "11.3.4",
 		"globals": "17.4.0",
@@ -66,12 +66,12 @@
 		"superagent": "10.3.0",
 		"ts-node": "10.9.2",
 		"typescript": "5.9.3",
-		"typescript-eslint": "8.57.0"
+		"typescript-eslint": "8.58.0"
 	},
 	"dependenciesMeta": {
 		"mongodb-memory-server": {
 			"built": true
 		}
 	},
-	"packageManager": "yarn@4.12.0"
+	"packageManager": "yarn@4.13.0"
 }
