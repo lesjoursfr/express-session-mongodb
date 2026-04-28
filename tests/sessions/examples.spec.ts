@@ -5,8 +5,8 @@ import expressSession from "express-session";
 import http from "http";
 import { Db, MongoClient } from "mongodb";
 import superagent from "superagent";
-import { MongoDBStore } from "../../src/index";
-import { kMongoMemoryServerURI } from "../toolbox";
+import { MongoDBStore } from "../../src/index.js";
+import { kMongoMemoryServerURI } from "../toolbox.js";
 
 /**
  *  This module exports a single function which takes an instance of connect

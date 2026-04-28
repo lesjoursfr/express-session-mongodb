@@ -25,10 +25,7 @@
 	],
 	"main": "./lib/index.js",
 	"types": "./lib/index.d.ts",
-	"files": [
-		"lib/**/*",
-		"src/**/*"
-	],
+	"type": "module",
 	"scripts": {
 		"freshlock": "rm -rf node_modules/ && rm .yarn/install-state.gz && rm yarn.lock && yarn",
 		"check-lint": "eslint",
@@ -37,25 +34,25 @@
 		"lint": "eslint --fix",
 		"format": "prettier --write .",
 		"build": "tsc -p tsconfig.build.json",
-		"test": "mocha"
+		"test": "NODE_OPTIONS='--loader=ts-node/esm' mocha"
 	},
 	"dependencies": {
 		"express": "^5.2.1",
 		"express-session": "^1.19.0",
-		"mongodb": "~7.1.1"
+		"mongodb": "~7.2.0"
 	},
 	"devDependencies": {
 		"@eslint/js": "10.0.1",
 		"@tsconfig/node22": "22.0.5",
 		"@types/express": "5.0.6",
-		"@types/express-session": "1.18.2",
+		"@types/express-session": "1.19.0",
 		"@types/fs-extra": "11.0.4",
 		"@types/mocha": "10.0.10",
 		"@types/node": "24.12.2",
 		"@types/sinon": "21.0.1",
 		"@types/superagent": "8.1.9",
 		"cookie": "1.1.1",
-		"eslint": "10.2.0",
+		"eslint": "10.2.1",
 		"eslint-config-prettier": "10.1.8",
 		"fs-extra": "11.3.4",
 		"globals": "17.5.0",
@@ -65,7 +62,7 @@
 		"sinon": "21.1.2",
 		"superagent": "10.3.0",
 		"ts-node": "10.9.2",
-		"typescript": "6.0.2",
+		"typescript": "6.0.3",
 		"typescript-eslint": "8.58.2"
 	},
 	"dependenciesMeta": {
@@ -73,5 +70,5 @@
 			"built": true
 		}
 	},
-	"packageManager": "yarn@4.13.0"
+	"packageManager": "yarn@4.14.1"
 }

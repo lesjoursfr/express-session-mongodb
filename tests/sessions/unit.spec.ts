@@ -2,7 +2,7 @@ import assert from "assert";
 import { SessionData } from "express-session";
 import { Collection, MongoClient } from "mongodb";
 import sinon, { SinonStubbedInstance } from "sinon";
-import { MongoDBStore } from "../../src/index";
+import { MongoDBStore } from "../../src/index.js";
 
 describe("connectMongoDBSession - options", function () {
   afterEach(() => sinon.restore());

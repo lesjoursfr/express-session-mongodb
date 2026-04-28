@@ -2,7 +2,7 @@ import assert from "assert";
 import express, { NextFunction, Request, Response } from "express";
 import http from "http";
 import superagent from "superagent";
-import { ensureLoggedIn, ensureLoggedOut } from "../../src/index";
+import { ensureLoggedIn, ensureLoggedOut } from "../../src/index.js";
 
 type UserData = { uid: number; name: string };
 type RequestWithUser = Request & { user?: UserData } & { isAuthenticated?: () => boolean };

@@ -1,7 +1,7 @@
-import { rmSync } from "fs-extra";
+import fsExtra from "fs-extra";
 import { Runner } from "mocha";
 import { MongoMemoryServer } from "mongodb-memory-server";
-import { createMongoMemoryServerOpts } from "./toolbox";
+import { createMongoMemoryServerOpts } from "./toolbox.js";
 
 let mongoServer: MongoMemoryServer;
 
@@ -21,6 +21,6 @@ export async function mochaGlobalTeardown(this: Runner) {
   console.log("MongoDB server stopped!");
 
   console.log(`Remove the MongoDB server folder [${dbPath}]...`);
-  rmSync(dbPath, { recursive: true });
+  fsExtra.rmSync(dbPath, { recursive: true });
   console.log("MongoDB server folder removed!");
 }

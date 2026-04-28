@@ -1,4 +1,4 @@
-import { mkdirSync } from "fs-extra";
+import { mkdirSync } from "fs";
 import type { MongoMemoryServer } from "mongodb-memory-server";
 import { join } from "path";
 

@@ -1,7 +1,7 @@
 {
 	"extension": ["ts"],
 	"spec": "tests/**/*.spec.ts",
-	"require": ["ts-node/register", "tests/fixtures.ts"],
+	"require": ["ts-node/esm", "tests/fixtures.ts"],
 	"timeout": 25000,
 	"exit": true
 }

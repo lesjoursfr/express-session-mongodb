@@ -11,7 +11,10 @@
 			"runtimeExecutable": "${workspaceFolder}/node_modules/.bin/mocha",
 			"runtimeArgs": [],
 			"outputCapture": "std",
-			"skipFiles": ["<node_internals>/**/*.js"]
+			"skipFiles": ["<node_internals>/**/*.js"],
+			"env": {
+				"NODE_OPTIONS": "--loader=ts-node/esm"
+			}
 		}
 	]
 }
