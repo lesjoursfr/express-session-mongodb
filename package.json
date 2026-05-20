@@ -48,7 +48,7 @@
 		"@types/express-session": "1.19.0",
 		"@types/fs-extra": "11.0.4",
 		"@types/mocha": "10.0.10",
-		"@types/node": "24.12.3",
+		"@types/node": "24.12.4",
 		"@types/sinon": "21.0.1",
 		"@types/superagent": "8.1.9",
 		"cookie": "1.1.1",
@@ -63,7 +63,7 @@
 		"superagent": "10.3.0",
 		"ts-node": "10.9.2",
 		"typescript": "6.0.3",
-		"typescript-eslint": "8.59.2"
+		"typescript-eslint": "8.59.3"
 	},
 	"dependenciesMeta": {
 		"mongodb-memory-server": {
