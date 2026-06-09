@@ -63,12 +63,12 @@
 		"superagent": "10.3.0",
 		"ts-node": "10.9.2",
 		"typescript": "6.0.3",
-		"typescript-eslint": "8.60.0"
+		"typescript-eslint": "8.60.1"
 	},
 	"dependenciesMeta": {
 		"mongodb-memory-server": {
 			"built": true
 		}
 	},
-	"packageManager": "yarn@4.15.0"
+	"packageManager": "yarn@4.16.0"
 }
