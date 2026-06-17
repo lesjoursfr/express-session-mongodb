@@ -39,7 +39,7 @@
 	"dependencies": {
 		"express": "^5.2.1",
 		"express-session": "^1.19.0",
-		"mongodb": "~7.2.0"
+		"mongodb": "~7.3.0"
 	},
 	"devDependencies": {
 		"@eslint/js": "10.0.1",
@@ -48,7 +48,7 @@
 		"@types/express-session": "1.19.0",
 		"@types/fs-extra": "11.0.4",
 		"@types/mocha": "10.0.10",
-		"@types/node": "24.12.4",
+		"@types/node": "24.13.2",
 		"@types/sinon": "21.0.1",
 		"@types/superagent": "8.1.10",
 		"cookie": "1.1.1",
@@ -58,12 +58,12 @@
 		"globals": "17.6.0",
 		"mocha": "11.7.6",
 		"mongodb-memory-server": "11.2.0",
-		"prettier": "3.8.3",
+		"prettier": "3.8.4",
 		"sinon": "22.0.0",
 		"superagent": "10.3.0",
 		"ts-node": "10.9.2",
 		"typescript": "6.0.3",
-		"typescript-eslint": "8.60.1"
+		"typescript-eslint": "8.61.0"
 	},
 	"dependenciesMeta": {
 		"mongodb-memory-server": {
