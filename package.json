@@ -55,7 +55,7 @@
 		"eslint": "10.5.0",
 		"eslint-config-prettier": "10.1.8",
 		"fs-extra": "11.3.5",
-		"globals": "17.6.0",
+		"globals": "17.7.0",
 		"mocha": "11.7.6",
 		"mongodb-memory-server": "11.2.0",
 		"prettier": "3.8.4",
@@ -63,7 +63,7 @@
 		"superagent": "10.3.0",
 		"ts-node": "10.9.2",
 		"typescript": "6.0.3",
-		"typescript-eslint": "8.61.0"
+		"typescript-eslint": "8.62.0"
 	},
 	"dependenciesMeta": {
 		"mongodb-memory-server": {
