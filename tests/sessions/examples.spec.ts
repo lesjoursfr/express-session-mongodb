@@ -1,5 +1,5 @@
 import assert from "assert";
-import { parse as parseCookie } from "cookie";
+import { parseCookie } from "cookie";
 import express from "express";
 import expressSession from "express-session";
 import http from "http";
