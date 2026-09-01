@@ -39,11 +39,11 @@
 	"dependencies": {
 		"express": "^5.2.1",
 		"express-session": "^1.19.0",
-		"mongodb": "~7.5.0"
+		"mongodb": "~7.6.0"
 	},
 	"devDependencies": {
 		"@eslint/js": "10.0.1",
-		"@tsconfig/node22": "22.0.5",
+		"@tsconfig/node22": "22.0.6",
 		"@types/express": "5.0.6",
 		"@types/express-session": "1.19.0",
 		"@types/fs-extra": "11.0.4",
@@ -52,23 +52,23 @@
 		"@types/sinon": "22.0.0",
 		"@types/superagent": "8.1.11",
 		"cookie": "2.0.1",
-		"eslint": "10.8.0",
+		"eslint": "10.9.1",
 		"eslint-config-prettier": "10.1.8",
 		"fs-extra": "11.4.0",
-		"globals": "17.8.0",
-		"mocha": "11.7.6",
+		"globals": "17.11.0",
+		"mocha": "11.8.0",
 		"mongodb-memory-server": "11.2.0",
 		"prettier": "3.9.6",
 		"sinon": "22.1.0",
 		"superagent": "10.3.0",
 		"ts-node": "10.9.2",
 		"typescript": "6.0.3",
-		"typescript-eslint": "8.65.0"
+		"typescript-eslint": "8.68.0"
 	},
 	"dependenciesMeta": {
 		"mongodb-memory-server": {
 			"built": true
 		}
 	},
-	"packageManager": "yarn@4.17.1"
+	"packageManager": "yarn@4.18.0"
 }
